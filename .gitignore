@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.env
+.venv
+venv/
+env/
+notebooks/.ipynb_checkpoints/
+
+# Data (too large for git)
+data/raw/
+data/processed/
+*.db
+*.sqlite
+
+# Power BI
+*.pbix
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
