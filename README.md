@@ -1,50 +1,44 @@
-# Student Record Management System (Python)
+# Student Record Management System
 
-A simple and beginner-friendly console-based project built using Python.  
-This system allows you to store, view, search, update, and delete student records.
+A console-based CRUD application for managing student records, built with Python.
 
----
+## Features
 
-## 🔧 Technologies Used
-- Python  
-- Lists & Dictionaries  
-- Basic data validation  
+- Add new students (with duplicate roll number prevention)
+- View all students
+- Search student by roll number
+- Update student details (name and age)
+- Delete student record
+- Input validation (age checking)
 
----
+## Technologies Used
 
-## 📝 Features
-- Add new students  
-- List all students  
-- Prevent duplicate roll numbers  
-- Search student by roll number  
-- Update student details  
-- Delete student record  
+- Python 3
+- Lists & Dictionaries (in-memory storage)
+- Basic data validation
 
----
+## How to Run
 
-## ▶ How to Run
-1. Install Python (if not installed)
-2. Clone the project:
-3. 3. Run the script:
+```bash
+python student_record_system.py
+```
 
----
+## Menu Options
 
-## 📌 Purpose of This Project
-This project helped me learn:
-- Python functions  
-- User input handling  
-- Data structures  
-- Basic CRUD operations  
-- Writing clean and readable code  
+1. **Add Student** — Enter name, roll number, and age. Duplicate rolls are rejected.
+2. **View Students** — Display all records in a formatted list.
+3. **Search Student** — Find a student by roll number and view their details.
+4. **Update Student** — Modify name or age for a given roll number.
+5. **Delete Student** — Remove a record by roll number.
+6. **Exit** — Close the application.
 
----
+## What I Learned
 
-## 👨‍💻 About Me
-I'm **Mittul Agarwal**, developing my skills in Python and Full-Stack Development.  
-This project is part of my learning journey and internship preparation.
+- Python functions and control flow
+- CRUD operations on in-memory data structures
+- Input handling and basic validation
+- Clean, readable code organisation
 
----
+## Author
 
-## 🔗 Project Repository
-https://github.com/mittulagarwal/student-record-system-python
-
+**Mittul Agarwal** — BCA Graduate | Data Specialist at YipitData

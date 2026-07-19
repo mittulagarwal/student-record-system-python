@@ -1,5 +1,3 @@
-# Simple Student Record Management System (Python)
-
 students = []
 
 def add_student():
@@ -8,11 +6,16 @@ def add_student():
     roll = input("Enter roll number: ")
     age = input("Enter age: ")
 
-    # check duplicate roll
     for s in students:
         if s["roll"] == roll:
             print("Student with this roll number already exists!")
             return
+
+    try:
+        int(age)
+    except ValueError:
+        print("Age must be a number!")
+        return
 
     students.append({"name": name, "roll": roll, "age": age})
     print("Student added successfully.")
@@ -24,6 +27,32 @@ def view_students():
         return
     for s in students:
         print(f"Name: {s['name']}, Roll: {s['roll']}, Age: {s['age']}")
+
+def search_student():
+    print("\n--- Search Student ---")
+    roll = input("Enter roll number to search: ")
+    for s in students:
+        if s["roll"] == roll:
+            print(f"Name: {s['name']}, Roll: {s['roll']}, Age: {s['age']}")
+            return
+    print("Student not found.")
+
+def update_student():
+    print("\n--- Update Student ---")
+    roll = input("Enter roll number to update: ")
+    for s in students:
+        if s["roll"] == roll:
+            s["name"] = input(f"Enter new name ({s['name']}): ") or s["name"]
+            new_age = input(f"Enter new age ({s['age']}): ")
+            if new_age:
+                try:
+                    int(new_age)
+                    s["age"] = new_age
+                except ValueError:
+                    print("Invalid age. Keeping original.")
+            print("Student updated successfully.")
+            return
+    print("Student not found.")
 
 def delete_student():
     print("\n--- Delete Student ---")
@@ -40,8 +69,10 @@ def main():
         print("\n=== Student Record System ===")
         print("1. Add Student")
         print("2. View Students")
-        print("3. Delete Student")
-        print("4. Exit")
+        print("3. Search Student")
+        print("4. Update Student")
+        print("5. Delete Student")
+        print("6. Exit")
         choice = input("Enter choice: ")
 
         if choice == "1":
@@ -49,8 +80,12 @@ def main():
         elif choice == "2":
             view_students()
         elif choice == "3":
-            delete_student()
+            search_student()
         elif choice == "4":
+            update_student()
+        elif choice == "5":
+            delete_student()
+        elif choice == "6":
             print("Exiting...")
             break
         else:
